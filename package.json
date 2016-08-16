@@ -1,7 +1,7 @@
 {
-  "name": "fpa2",
+  "name": "myApp",
   "version": "1.0.1",
-  "description": "The base theme for the Food Porn Awards 2017",
+  "description": "Website description",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
