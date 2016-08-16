@@ -1,0 +1,28 @@
+{
+  "name": "fpa2",
+  "version": "1.0.1",
+  "description": "The base theme for the Food Porn Awards 2017",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r _www/ && mkdir _www/ && mkdir _www/css && mkdir _www/js",
+    "build:css": "node-sass --include-path scss css/style.scss css/style.css && cleancss -o css/style.min.css css/style.css",
+    "build:js": "rm -r js/bundle.js && rm -r js/bundle.min.js && concat-cli -f js/*.js -o js/bundle.js && uglifyjs js/bundle.js -o js/bundle.min.js",
+    "move:css": "cp css/style.min.css _www/css",
+    "move:js": "cp js/bundle.min.js _www/js",
+    "move:html": "cp index.html _www && cp submit-entry.html _www && cp blog.html _www",
+    "move:img": "cp -a img/. _www/img",
+    "move:vendor": "cp -a vendor _www/vendor",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run move:css && npm run move:js && npm run move:img && npm run move:html && npm run move:vendor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://thomasxbanks@bitbucket.org/thomasxbanks/fpa2.git"
+  },
+  "author": "Thomas Banks",
+  "license": "ISC",
+  "homepage": "https://github.com/thomasxbanks/npm-build-tool.git#readme",
+  "dependencies": {
+
+  }
+}
